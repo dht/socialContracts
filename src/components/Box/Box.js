@@ -31,8 +31,7 @@ export default class Box extends React.Component {
         return (
             <div className="Box-container">
                 <div className="oh-title">
-                    {name} {name? '-' :''}
-                    זמינות
+                    {name}&nbsp;{name? '-' :''}&nbsp;                    זמינות
                 </div>
                 {!name && !phone ?  <LinearProgress mode="indeterminate" /> : null }
                 {phone ? <OHLine icon="phone" hint="טלפון" label="שיחה" value={phone}/> : null}
