@@ -1,0 +1,27 @@
+.Box-container {
+  width: 300px;
+  border: 1px solid gray;
+  margin: 10px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  line-height: 20px;
+  text-align: right;
+
+  .oh-title {
+    font-weight: bold;
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+
+  .oh-line {
+    line-height: 24px;
+
+    strong {
+      display: none;
+    }
+
+    .fa {
+      font-size: 24px;
+    }
+  }
+}
