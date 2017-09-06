@@ -1,5 +1,6 @@
 import React from 'react';
 import './Box.css';
+import LinearProgress from 'material-ui/LinearProgress';
 
 
 const OHLine = (props) => <div className="oh-line">
@@ -30,13 +31,14 @@ export default class Box extends React.Component {
         return (
             <div className="Box-container">
                 <div className="oh-title">
-                    {name} -
+                    {name} {name? '-' :''}
                     זמינות
                 </div>
-                <OHLine icon="phone" hint="טלפון" label="שיחה" value={phone} />
-                <OHLine icon="whatsapp" hint="וואטסאפ" label="וואטסאפ" value={whatsapp} />
-                <OHLine icon="envelope-o" hint="מייל" label="מייל" value={email} />
-                <OHLine icon="facebook-official" hint="פייסבוק" label="פייסבוק" value={facebook} />
+                {!name && !phone ?  <LinearProgress mode="indeterminate" /> : null }
+                {phone ? <OHLine icon="phone" hint="טלפון" label="שיחה" value={phone}/> : null}
+                {whatsapp ? <OHLine icon="whatsapp" hint="וואטסאפ" label="וואטסאפ" value={whatsapp}/> : null}
+                {email ? <OHLine icon="envelope-o" hint="מייל" label="מייל" value={email}/> : null}
+                {facebook ? <OHLine icon="facebook-official" hint="פייסבוק" label="פייסבוק" value={facebook}/> : null}
             </div>
         );
     }
