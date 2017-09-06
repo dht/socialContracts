@@ -12,6 +12,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import App from './components/AppContainer';
 import View from './components/View/View';
+import Image from './components/Image/ImageContainer';
 
 import registerServiceWorker from './registerServiceWorker';
 import {guid8} from './utils/guid';
@@ -49,7 +50,7 @@ ReactDOM.render(<Provider store={store}>
         <Router history={history}>
             <Route path="/" component={App} onEnter={onEnter}/>
             <Route path="/:id" component={View} onEnter={onEnterView}/>
-            <Route path="/:id/image" component={View} onEnter={onEnterView}/>
+            <Route path="/:id/image" component={Image} onEnter={onEnterView}/>
             <Route path="/:id/edit" component={App} onEnter={onEnterEdit}/>
         </Router>
     </MuiThemeProvider>
