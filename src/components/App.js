@@ -13,10 +13,6 @@ class App extends Component {
             <div className="container App">
                 <div className="row">
                     <div className="col-12">
-
-                        <div>
-                            <span>socialcontracts.io</span>
-                        </div>
                         <h1>Social Contracts</h1>
                         {/*<h2>Let people know when you're available</h2>*/}
                         <h2>
@@ -36,6 +32,21 @@ class App extends Component {
                         </div>
                         <Box />
                         <a href={`/#/${contractId}`} target="_blank">לינק לשיתוף</a>
+                    </div>
+                </div>
+                <div className="row footer">
+                    <div className="col-xs-12 col-sm-3">
+                        <span>socialcontracts.io</span>
+                    </div>
+                    <div className="col-xs-12 col-sm-6">
+                        <strong>מטרה:</strong>
+                        &nbsp;
+                        <span>יצירת תיאום ציפיות לגבי זמינות על מנת ליצור מרחב חסר הסכות</span>
+                    </div>
+                    <div className="col-xs-12 col-sm-3">
+                        <strong>רעיון לשימוש:</strong>
+                        &nbsp;
+                        <span>לינק בחתימה</span>
                     </div>
                 </div>
             </div>

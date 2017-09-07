@@ -33,7 +33,7 @@ export default class Box extends React.Component {
                 <div className="oh-title">
                     {name}&nbsp;{name? '-' :''}&nbsp;                    זמינות
                 </div>
-                {!name && !phone ?  <LinearProgress mode="indeterminate" /> : null }
+                {!phone ?  <LinearProgress mode="indeterminate" /> : null }
                 {phone ? <OHLine icon="phone" hint="טלפון" label="שיחה" value={phone}/> : null}
                 {whatsapp ? <OHLine icon="whatsapp" hint="וואטסאפ" label="וואטסאפ" value={whatsapp}/> : null}
                 {email ? <OHLine icon="envelope-o" hint="מייל" label="מייל" value={email}/> : null}
