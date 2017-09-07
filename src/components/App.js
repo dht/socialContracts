@@ -35,18 +35,19 @@ class App extends Component {
                     </div>
                 </div>
                 <div className="row footer">
-                    <div className="col-xs-12 col-sm-3">
+                    <div className="col-xs-12 col-sm-2">
                         <span>socialcontracts.io</span>
                     </div>
-                    <div className="col-xs-12 col-sm-6">
+                    <div className="col-xs-12 col-sm-5">
                         <strong>מטרה:</strong>
                         &nbsp;
-                        <span>יצירת תיאום ציפיות לגבי זמינות על מנת ליצור מרחב חסר הסכות</span>
+                        <span>יצירת מרחב עם שליטה בהסחות ע״י תיאום ציפיות</span>
                     </div>
-                    <div className="col-xs-12 col-sm-3">
+                    <div className="col-xs-12 col-sm-5">
                         <strong>רעיון לשימוש:</strong>
                         &nbsp;
-                        <span>לינק בחתימה</span>
+                        <span>לינק בחתימה, תגובה אוטומטית ב-</span>
+                        <a href="https://github.com/dht/whatsapp-answering-machine" target="_blank">מזכירת וואטסאפ</a>
                     </div>
                 </div>
             </div>
