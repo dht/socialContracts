@@ -4,7 +4,8 @@ import {setName, setAvailabilityString} from '../../reducers/appState/appState_a
 
 const mapStateToProps = (state, ownProps) => {
     const {appState} = state,
-        {name, availabilityString,readonly} = appState;
+        {settings, availabilityString,readonly} = appState,
+        {name} = settings || {};
 
     return {
         name,

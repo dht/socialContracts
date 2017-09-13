@@ -2,8 +2,11 @@
 body {
   margin: 0;
   padding: 0;
-  direction: rtl;
   font-family: 'Alef', sans-serif; }
+
+body.rtl {
+  direction: rtl;
+}
 
 h1, h2 {
   font-family: 'Source Sans Pro', sans-serif;

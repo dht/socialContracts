@@ -1,18 +1,31 @@
 .Box-container {
-  width: 300px;
-  border: 1px solid gray;
-  margin: 10px auto;
-  padding: 20px;
-  box-sizing: border-box;
-  line-height: 20px;
-  text-align: right; }
-  .Box-container .oh-title {
+    width: 300px;
+    border: 1px solid gray;
+    margin: 10px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    line-height: 20px;
+    text-align: left;
+}
+
+.Box-container .oh-title {
     font-weight: bold;
     font-size: 18px;
-    padding-bottom: 10px; }
-  .Box-container .oh-line {
-    line-height: 24px; }
-    .Box-container .oh-line strong {
-      display: none; }
-    .Box-container .oh-line .fa {
-      font-size: 24px; }
+    padding-bottom: 10px;
+}
+
+.Box-container .oh-line {
+    line-height: 24px;
+}
+
+.Box-container .oh-line strong {
+    display: none;
+}
+
+.Box-container .oh-line .fa {
+    font-size: 24px;
+}
+
+body.rtl .Box-container {
+    text-align: right;
+}

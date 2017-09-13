@@ -12,7 +12,7 @@ const autosave = store => next => action => {
 		acceptActions.indexOf(action.type) >= 0 &&
 		ignoreActions.indexOf(action.type) === -1) {
 
-		store.dispatch(saveContract());
+        store.dispatch(saveContract());
 	}
 
 	return result

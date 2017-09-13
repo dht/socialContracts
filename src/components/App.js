@@ -3,8 +3,15 @@ import './App.css';
 
 import Box from './Box/BoxContainer';
 import Form from './Form/FormContainer';
+import {strings} from '../constants/languages';
+
+let str = strings();
 
 class App extends Component {
+
+    componentDidMount() {
+        str = strings();
+    }
 
     render() {
         const {contractId} = this.props;
@@ -16,7 +23,7 @@ class App extends Component {
                         <h1>Social Contracts</h1>
                         {/*<h2>Let people know when you're available</h2>*/}
                         <h2>
-                            שתפ/י את שעות הזמינות שלך
+                            {str['tagline']}
                         </h2>
                     </div>
                 </div>
@@ -27,11 +34,11 @@ class App extends Component {
                     <div className="col-sm-6 col-xs-12">
                         <div>
                             <strong>
-                            תצוגה מקדימה:
+                                {str['preview']}
                             </strong>
                         </div>
                         <Box />
-                        <a href={`/#/${contractId}`} target="_blank">לינק לשיתוף</a>
+                        <a href={`/#/${contractId}`} target="_blank">{str['link_for_sharing']}</a>
                     </div>
                 </div>
                 <div className="row footer">
@@ -39,15 +46,19 @@ class App extends Component {
                         <span>socialcontracts.io</span>
                     </div>
                     <div className="col-xs-12 col-sm-5">
-                        <strong>מטרה:</strong>
+                        <strong>{str['goal_header']}</strong>
                         &nbsp;
-                        <span>יצירת מרחב עם שליטה בהסחות ע״י תיאום ציפיות</span>
+                        <span>
+                            {str['goal_text']}
+                        </span>
                     </div>
                     <div className="col-xs-12 col-sm-5">
-                        <strong>רעיון לשימוש:</strong>
+                        <strong>{str['idea_header']}</strong>
                         &nbsp;
-                        <span>לינק בחתימה, תגובה אוטומטית ב-</span>
-                        <a href="https://github.com/dht/whatsapp-answering-machine" target="_blank">מזכירת וואטסאפ</a>
+                        <span>{str['idea_text']}</span>
+                        <a href="https://github.com/dht/whatsapp-answering-machine" target="_blank">
+                            {str['whatsapp_answering_machine']}
+                        </a>
                     </div>
                 </div>
             </div>

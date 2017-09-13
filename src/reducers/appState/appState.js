@@ -1,7 +1,9 @@
 export const initialState = {
     uid: 0,
-    name: '',
     contractId: 0,
+    settings: {
+        name: '',
+    },
     availabilityString: {
         phone: '',
         whatsapp: '',
@@ -36,8 +38,7 @@ const availabilityString = (state, action) => {
     }
 }
 
-const appState = (state = initialState, action) => {
-
+const settings = (state, action) => {
     switch (action.type) {
         case ActionTypes.SET_NAME:
             return {
@@ -45,6 +46,14 @@ const appState = (state = initialState, action) => {
                 name: action.value
             }
 
+        default:
+            return state;
+    }
+}
+
+const appState = (state = initialState, action) => {
+
+    switch (action.type) {
         case ActionTypes.SET_USER_ID:
             return {
                 ...state,
@@ -68,6 +77,12 @@ const appState = (state = initialState, action) => {
             return {
                 ...state,
                 availabilityString: availabilityString(state.availabilityString, action)
+            }
+
+        case ActionTypes.SET_NAME:
+            return {
+                ...state,
+                settings: settings(state.settings, action)
             }
 
         default:

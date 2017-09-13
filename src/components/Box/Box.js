@@ -1,7 +1,9 @@
 import React from 'react';
 import './Box.css';
 import LinearProgress from 'material-ui/LinearProgress';
+import {strings} from '../../constants/languages';
 
+let str = strings();
 
 const OHLine = (props) => <div className="oh-line">
     <span className={`fa fa-${props.icon}`} title={props.hint}>&nbsp;</span>
@@ -21,6 +23,7 @@ export default class Box extends React.Component {
     }
 
     componentDidMount() {
+        str = strings();
     }
 
 
@@ -31,13 +34,13 @@ export default class Box extends React.Component {
         return (
             <div className="Box-container">
                 <div className="oh-title">
-                    {name}&nbsp;{name? '-' :''}&nbsp;                    זמינות
+                    {name}&nbsp;{name? '-' :''}&nbsp;{str['availability']}
                 </div>
-                {!phone ?  <LinearProgress mode="indeterminate" /> : null }
-                {phone ? <OHLine icon="phone" hint="טלפון" label="שיחה" value={phone}/> : null}
-                {whatsapp ? <OHLine icon="whatsapp" hint="וואטסאפ" label="וואטסאפ" value={whatsapp}/> : null}
-                {email ? <OHLine icon="envelope-o" hint="מייל" label="מייל" value={email}/> : null}
-                {facebook ? <OHLine icon="facebook-official" hint="פייסבוק" label="פייסבוק" value={facebook}/> : null}
+                {!name && !phone ?  <LinearProgress mode="indeterminate" /> : null }
+                {phone ? <OHLine icon="phone" hint={str['phone_hint']} label={str['phone_label']} value={phone}/> : null}
+                {whatsapp ? <OHLine icon="whatsapp" hint={str['whatsapp_hint']} label={str['whatsapp_label']} value={whatsapp}/> : null}
+                {email ? <OHLine icon="envelope-o" hint={str['email_hint']} label={str['email_label']} value={email}/> : null}
+                {facebook ? <OHLine icon="facebook-official" hint={str['facebook_hint']} label={str['facebook_label']} value={facebook}/> : null}
             </div>
         );
     }

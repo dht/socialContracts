@@ -5,7 +5,7 @@
   padding: 20px;
   box-sizing: border-box;
   line-height: 20px;
-  text-align: right;
+  text-align: left;
 
   .oh-title {
     font-weight: bold;
@@ -23,5 +23,11 @@
     .fa {
       font-size: 24px;
     }
+  }
+}
+
+body.rtl {
+  .Box-container {
+    text-align: right;
   }
 }

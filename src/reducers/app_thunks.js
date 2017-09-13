@@ -1,7 +1,11 @@
 import api_login from '../utils/login_api';
 import * as api from '../utils/contracts_api';
 import * as actions from './appState/appState_actions';
-import {contract} from '../constants/empty';
+import {getEmptyContract} from '../constants/languages';
+
+const emptyContract= getEmptyContract();
+
+console.log('emptyContract -> ', emptyContract);
 
 export const loadContract = (contractId) => {
 
@@ -12,7 +16,8 @@ export const loadContract = (contractId) => {
 
         api.fetchContract()
             .then(state => {
-                const {name, availabilityString} = state || {};
+                const {settings, availabilityString} = state || {},
+                    {name} = settings || {};
 
                 if (name) {
                     dispatch(actions.setName(name))
@@ -29,7 +34,8 @@ export const saveContract = () => {
 
     return (dispatch, getState) => {
         const {appState} = getState(),
-            {name, availabilityString} = appState;
+            {settings, availabilityString} = appState,
+            {name} = settings || {};
 
         if (name) {
             api.saveContractName(name);
@@ -44,9 +50,18 @@ export const saveContract = () => {
 export const setDefaultContract = () => {
 
     return (dispatch) => {
-       dispatch(actions.setAvailability(contract.availabilityString));
+       dispatch(actions.setAvailability(emptyContract.availabilityString));
     }
 }
+
+export const createNewContract = (contractId) => {
+
+    return (dispatch) => {
+        api.configureContract(contractId);
+        api.saveContractAvailability(emptyContract.availabilityString);
+    }
+}
+
 
 
 export const login = (contractId) => {

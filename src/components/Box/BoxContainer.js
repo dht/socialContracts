@@ -3,7 +3,8 @@ import Box from './Box'
 
 const mapStateToProps = (state, ownProps) => {
     const {appState} = state,
-        {name, availabilityString} = appState;
+        {settings, availabilityString} = appState,
+        {name} = settings || {};
 
     return {
         name,

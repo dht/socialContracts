@@ -1,4 +1,4 @@
-export const contract = {
+export const emptyContract = {
     availabilityString: {
         phone: 'אהיה זמין החל מ- 19:00',
         whatsapp: 'זמין כרגע',

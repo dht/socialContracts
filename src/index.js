@@ -14,13 +14,17 @@ import App from './components/AppContainer';
 import View from './components/View/View';
 import Image from './components/Image/ImageContainer';
 
+import {setLanguage} from './constants/languages';
+
 import registerServiceWorker from './registerServiceWorker';
 import {guid8} from './utils/guid';
-import {login, loadContract, setDefaultContract} from './reducers/app_thunks';
+import {login, loadContract, setDefaultContract, createNewContract} from './reducers/app_thunks';
 
 const onEnterView = (location) => {
     const {params} = location,
-        {id} = params;
+        {id, language = 'en'} = params;
+
+    setLanguage(language);
 
     store.dispatch(login(id))
         .then(() => {
@@ -30,7 +34,9 @@ const onEnterView = (location) => {
 
 const onEnterEdit = (location) => {
     const {params} = location,
-        {id} = params;
+        {id, language = 'en'} = params;
+
+    setLanguage(language);
 
     store.dispatch(login(id))
         .then(() => {
@@ -40,7 +46,9 @@ const onEnterEdit = (location) => {
 }
 
 const onEnter = () => {
-    document.location.hash = guid8() + '/edit';
+    const contractId = guid8();
+    store.dispatch(createNewContract(contractId));
+    document.location.hash = contractId + '/edit';
 }
 
 const history = syncHistoryWithStore(hashHistory, store)
@@ -50,8 +58,10 @@ ReactDOM.render(<Provider store={store}>
         <Router history={history}>
             <Route path="/" component={App} onEnter={onEnter}/>
             <Route path="/:id" component={View} onEnter={onEnterView}/>
-            <Route path="/:id/image" component={Image} onEnter={onEnterView}/>
             <Route path="/:id/edit" component={App} onEnter={onEnterEdit}/>
+            <Route path="/:id/image" component={Image} onEnter={onEnterView}/>
+            <Route path="/:id/:language" component={View} onEnter={onEnterView}/>
+            <Route path="/:id/edit/:language" component={App} onEnter={onEnterEdit}/>
         </Router>
     </MuiThemeProvider>
 </Provider>, document.getElementById('root'));
