@@ -3,8 +3,9 @@ import Form from './Form'
 import {setName, setAvailabilityString} from '../../reducers/appState/appState_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    const {appState} = state,
-        {settings, availabilityString,readonly} = appState,
+    const {appState, uiState} = state,
+        {settings, availabilityString} = appState,
+        {readonly} = uiState,
         {name} = settings || {};
 
     return {

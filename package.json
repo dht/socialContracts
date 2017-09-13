@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "clone": "^2.1.1",
     "firebase": "^4.3.0",
     "material-ui": "^0.19.1",
     "node-sass-chokidar": "^0.0.3",

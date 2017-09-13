@@ -2,8 +2,8 @@ import {connect} from 'react-redux'
 import App from './App'
 
 const mapStateToProps = (state, ownProps) => {
-    const {appState} = state,
-        {contractId} = appState;
+    const {uiState} = state,
+        {contractId} = uiState;
 
     return {
         contractId,
