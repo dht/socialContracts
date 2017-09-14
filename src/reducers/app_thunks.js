@@ -3,10 +3,9 @@ import * as api from '../utils/contracts_api';
 import * as actions from './appState/appState_actions';
 import * as state_actions from './UIState/UIState_actions';
 import {getEmptyContract} from '../constants/languages';
+import {contractToText} from '../utils/contracts';
 
 const emptyContract= getEmptyContract();
-
-console.log('emptyContract -> ', emptyContract);
 
 export const loadContract = (contractId) => {
 
@@ -17,11 +16,15 @@ export const loadContract = (contractId) => {
 
         api.fetchContract()
             .then(state => {
-                const {settings, availabilityString} = state || {},
+                let {settings, availabilityString, type} = state || {},
                     {name} = settings || {};
 
                 if (name) {
                     dispatch(actions.setName(name))
+                }
+
+                if (type === 'dynamic') {
+                    availabilityString = contractToText(state, 'en', true);
                 }
 
                 if (availabilityString && availabilityString.phone) {
@@ -62,8 +65,6 @@ export const createNewContract = (contractId) => {
         api.saveContractAvailability(emptyContract.availabilityString);
     }
 }
-
-
 
 export const login = (contractId) => {
 

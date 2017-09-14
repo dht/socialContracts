@@ -11,7 +11,7 @@ let language = 'en';
 export const setLanguage = (_language) => {
     language = _language;
 
-    if (_language === 'he') {
+    if (_language === 'he' && typeof document !== 'undefined') {
         document.body.className += ' rtl';
     }
 }
