@@ -14,6 +14,7 @@ import App from './components/AppContainer';
 import View from './components/View/View';
 import Image from './components/Image/ImageContainer';
 import Privacy from './components/Privacy/Privacy';
+import Support from './components/Privacy/Support';
 
 import {setLanguage} from './constants/languages';
 
@@ -59,6 +60,7 @@ ReactDOM.render(<Provider store={store}>
         <Router history={history}>
             <Route path="/" component={App} onEnter={onEnter}/>
             <Route path="/privacy" component={Privacy} />
+            <Route path="/support" component={Support} />
             <Route path="/:id" component={View} onEnter={onEnterView}/>
             <Route path="/:id/edit" component={App} onEnter={onEnterEdit}/>
             <Route path="/:id/image" component={Image} onEnter={onEnterView}/>
