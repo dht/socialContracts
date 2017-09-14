@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import config from '../../constants/Config-private';
 
 class Support extends Component {
 
@@ -9,7 +10,7 @@ class Support extends Component {
 
                 <p>Last updated: September 14, 2017</p>
 
-                <p>In case you encounter any issue please contact <a href="mailto:email">email</a>.</p>
+                <p>In case you encounter any issue please contact <a href={`mailto:${config.email}`}>{config.email}</a>.</p>
             </div>
         );
     }
