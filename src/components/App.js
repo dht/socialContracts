@@ -42,17 +42,15 @@ class App extends Component {
                     </div>
                 </div>
                 <div className="row footer">
-                    <div className="col-xs-12 col-sm-2">
+                    <div className="col-xs-12 col-sm-12">
                         <span>socialcontracts.io</span>
-                    </div>
-                    <div className="col-xs-12 col-sm-5">
+                        &nbsp;&#x25A0;&nbsp;
                         <strong>{str['goal_header']}</strong>
                         &nbsp;
                         <span>
-                            {str['goal_text']}
+                            <a href="https://reclaimyourattention.com" target="_blank">{str['goal_text']}</a>
                         </span>
-                    </div>
-                    <div className="col-xs-12 col-sm-5">
+                        &nbsp;&#x25A0;&nbsp;
                         <strong>{str['idea_header']}</strong>
                         &nbsp;
                         <span>{str['idea_text']}</span>

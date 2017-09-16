@@ -1,0 +1,26 @@
+[debug] [2017-09-16T15:45:58.978Z] ----------------------------------------------------------------------
+[debug] [2017-09-16T15:45:58.981Z] Command:      /Users/Guy/.nvm/versions/node/v8.4.0/bin/node /usr/local/bin/firebase deploy
+[debug] [2017-09-16T15:45:58.981Z] CLI Version:  3.9.1
+[debug] [2017-09-16T15:45:58.981Z] Platform:     darwin
+[debug] [2017-09-16T15:45:58.981Z] Node Version: v8.4.0
+[debug] [2017-09-16T15:45:58.982Z] Time:         Sat Sep 16 2017 18:45:58 GMT+0300 (IDT)
+[debug] [2017-09-16T15:45:58.982Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-09-16T15:45:58.993Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-16T15:45:58.993Z] > authorizing via signed-in user
+[debug] [2017-09-16T15:45:58.995Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/social-contracts  
+ Sat Sep 16 2017 18:45:58 GMT+0300 (IDT)
+[debug] [2017-09-16T15:46:00.425Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-16T15:46:00.427Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/social-contracts/tokens  
+ Sat Sep 16 2017 18:46:00 GMT+0300 (IDT)
+[debug] [2017-09-16T15:46:01.853Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'social-contracts'...
+[info] 
+[info] i  deploying database, hosting
+[info] ✔  database: rules ready to deploy.
+[info] i  hosting: preparing build directory for upload...
+[debug] [2017-09-16T15:46:07.543Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/social-contracts/uploads/-KuAMZi_2vjj9tDWOgRD?fileCount=19&message=  
+ Sat Sep 16 2017 18:46:07 GMT+0300 (IDT)
+[debug] [2017-09-16T15:46:24.958Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-16T15:46:24.959Z] [hosting] .tgz uploaded successfully, waiting for extraction

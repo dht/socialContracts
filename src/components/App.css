@@ -2,4 +2,10 @@
   text-align: center; }
 
 .footer {
-  margin-top: 100px; }
+  margin-top: 100px;
+color:#bbb;}
+
+.footer a {
+  color:#bbb;
+  text-decoration: underline;
+}
