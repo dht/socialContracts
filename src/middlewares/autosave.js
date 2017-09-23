@@ -1,4 +1,4 @@
-import {ActionTypes} from '../reducers/appState/appState';
+import {ActionTypes} from 'social-contracts/reducers/appState/appState';
 import {saveContract} from '../reducers/app_thunks';
 
 const acceptActions = [ActionTypes.SET_AVAILABILITY_STRING, ActionTypes.SET_NAME];

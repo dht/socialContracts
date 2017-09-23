@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import Form from './Form'
-import {setName, setAvailabilityString} from '../../reducers/appState/appState_actions';
+import {setName, setAvailabilityString} from 'social-contracts/reducers/appState/appState_actions';
 
 const mapStateToProps = (state, ownProps) => {
     const {appState, uiState} = state,

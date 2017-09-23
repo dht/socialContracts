@@ -1396,7 +1396,7 @@ cliui@^3.2.0:
     strip-ansi "^3.0.1"
     wrap-ansi "^2.0.0"
 
-clone:
+clone, clone@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.1.tgz#d217d1e961118e3ac9a4b8bba3285553bf647cdb"
 
@@ -5965,6 +5965,12 @@ sntp@1.x.x:
   resolved "https://registry.yarnpkg.com/sntp/-/sntp-1.0.9.tgz#6541184cc90aeea6c6e7b35e2659082443c66198"
   dependencies:
     hoek "2.x.x"
+
+social-contracts@0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/social-contracts/-/social-contracts-0.1.7.tgz#03c788c5ad40b910e5a0390aaaa3daf4b942a4b3"
+  dependencies:
+    clone "^2.1.1"
 
 sockjs-client@1.1.4:
   version "1.1.4"

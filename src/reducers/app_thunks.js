@@ -1,9 +1,9 @@
 import api_login from '../utils/login_api';
 import * as api from '../utils/contracts_api';
-import * as actions from './appState/appState_actions';
+import * as actions from 'social-contracts/reducers/appState/appState_actions';
 import * as state_actions from './UIState/UIState_actions';
 import {getEmptyContract} from '../constants/languages';
-import {contractToText} from '../utils/contracts';
+import {contractToText} from 'social-contracts/utils/contracts';
 
 const emptyContract= getEmptyContract();
 
